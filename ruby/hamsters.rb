@@ -1,9 +1,3 @@
-hamster's name (the clerk names any hamsters who come in without name tags, so all hamsters have names)
-volume level from 1 to 10 (some people are light sleepers who won't adopt extra-squeaky hamsters)
-fur color
-whether the hamster is a good candidate for adoption
-estimated age
-
 puts "What is the hamster's name?"
 name = gets.chomp
 
@@ -19,5 +13,23 @@ while check
 		puts "That is not a number."
 	end		
 end
+
+puts "What color is the fur?"
+fur_color = gets.chomp
+
+adoption_ready = ""
+while adoption_ready != "y" || "n"
+	puts "Is the hamster a good candidate for adoption? y/n"
+	adoption_ready = gets.chomp
+end
+
+puts "What is the estimated age of the hamster?"
+est_age = gets.chomp
+
+if est_age == ""
+	est_age = nil
+end
+
+
 
 
