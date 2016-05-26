@@ -32,6 +32,6 @@ if est_age == ""
 	est_age = nil
 end
 
-
+puts "The hamster's name is #{name}. The volume level is #{volume}. The fur is #{fur_color}. The hamster is ready for adoption: #{adoption_ready}. The estimated age is: #{est_age}."
 
 
