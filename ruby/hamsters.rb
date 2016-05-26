@@ -5,6 +5,7 @@ check = true
 while check
 	puts "What is the volume level? (1-10)"
 	volume = gets.chomp
+	volume.to_i
 	if volume > 0
 		check == false
 	elsif volume > 10
@@ -25,6 +26,7 @@ end
 
 puts "What is the estimated age of the hamster?"
 est_age = gets.chomp
+est_age.to_i
 
 if est_age == ""
 	est_age = nil
