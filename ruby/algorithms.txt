@@ -1,0 +1,42 @@
+Algorithm for using an elevator
+
+Approach the elevator control panel near the door, which is marked with an up arrow, a down arrow, or both.
+IF you are going to a higher floor, press the up button.
+IF you are going to a lower floor, press the down button.
+WHEN the door opens, enter the elevator.
+     Look for the panel with numbered buttons.
+     Press the button of the desired floor once.
+     UNTIL the elevator reaches your desired floor, stand in elevator, facing the front doors, avoiding eye contact and conversation if possible.
+WHEN the elevator reaches the desired floor AND the doors open, exit the elevator.
+
+
+Algorithm for making a smoothie
+
+Place blender on counter top. 
+Plug in blender.
+Remove the lid of the blender.
+Place smoothie ingredients into blender.
+Place the lid securely onto the blender.
+Select the smoothie setting on the blender. Press the button once.
+For 30 seconds, watch blender. 
+When it looks like ingredients have been well blended:
+	- turn off blender
+	- remove lid
+	- place spoon into blender to remove a small sample of smoothie
+If ingredients are well blended, pour smoothie into a glass.
+	If ingredients are not well blended, remove spoon and replace lid. Blend for 30 more seconds.
+	When it looks like ingredients have been well blended:
+		- turn off blender
+		- remove lid
+		- place spoon into blender to remove a small sample of smoothie
+	If ingredients are well blended, pour smoothie into a glass.
+		Else add a small amount of water. Remove spoon, replace lid, and blend for 30 more seconds.
+		Remove lid and pour contents of smoothie into a glass.
+
+
+
+
+
+
+
+
