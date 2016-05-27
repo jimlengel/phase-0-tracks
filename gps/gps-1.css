@@ -1,3 +1,36 @@
 body {
-	background-color: red;
+	font-family: arial;
+  background-color: #ffcccc;
+}
+
+section {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.column-1 {
+  border: 1px solid black;
+  background-color: blue;
+  width: 40%;
+  float: left;
+}
+
+.column-2 {
+    border: 1px solid black;
+    background-color: red;
+    width: 40%;
+    float: right;
+}
+
+footer {
+  clear: both;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
