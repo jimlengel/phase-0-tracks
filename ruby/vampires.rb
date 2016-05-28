@@ -34,27 +34,31 @@ def vampire_questions()
 
 	is_a_vampire = ""
 
-	if (year_born == computed_age) && (garlic_bread == "y" || insurance == "y")
-		is_a_vampire = "pn"
-
-	elsif (year_born != computed_age)
-		if (garlic_bread == "n") && (insurance == "n")
-			is_a_vampire = "cy"		
-		elsif (garlic_bread == "n" || insurance == "n")
-			is_a_vampire = "py"
-		else
-			is_a_vampire = "in"
-		end
-
-	elsif name == "Drake Cula" || name == "Tu Fang"
-		is_a_vampire = "dy"
-
-	else
-		is_a_vampire = "in"
-	end
-
-
-	puts is_a_vampire
+	#check for allergies
+  allergies = ""	
+  puts "Please list all of your allergies. You may type 'done' when finished."
+	until allergies == "done" || allergies == "sunshine"
+		allergies = gets.chomp
+    if allergies == "sunshine"
+      is_a_vampire = "dy"
+    else
+    	if (year_born == computed_age) && (garlic_bread == "y" || insurance == "y")
+    		is_a_vampire = "pn"
+    	elsif (year_born != computed_age)
+    		if (garlic_bread == "n") && (insurance == "n")
+    			is_a_vampire = "cy"		
+    		elsif (garlic_bread == "n" || insurance == "n")
+    			is_a_vampire = "py"
+    		else
+    			is_a_vampire = "in"
+    		end
+    	elsif name == "Drake Cula" || name == "Tu Fang"
+    		is_a_vampire = "dy"
+    	else
+    		is_a_vampire = "in"
+    	end
+    end
+  end
 
 	case is_a_vampire
 		when "pn"
