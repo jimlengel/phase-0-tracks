@@ -3,27 +3,30 @@
 def encrypt (str)
   counter = 0
   length = str.length
+  result = ""
   while counter < length
      str[counter].next[0]
-     result = str[counter].next[0]
-     print result
+     result += str[counter].next[0]
      counter += 1
   end
-  
+    return result
 end
 
 def decrypt (string)
     count = 0
   string_length = string.length
+  result_d = ""
   while count < string_length
      alphabet="abcdefghijklmnopqrstuvwxyz"
      alph_index = alphabet.index(string[count])
      alph_index_new = alph_index - 1
      alph_index_new
-     print alphabet[alph_index_new]
-     #alphabet[alph_index_new]
+     
+    # print alphabet[alph_index_new]
+    result_d += alphabet[alph_index_new]
      count += 1
   end
+    return result_d
 end
 
 # ask if they want to encrypt or decrypt a password
@@ -47,11 +50,16 @@ puts "Please enter your password."
 password = gets.chomp
 
 if password_preference == "e"
-  encrypt(password)
+  enc = encrypt(password)
+  puts "Your encrypted word is #{enc}."
 elsif password_preference == "d"
-  decrypt(password)
+  dec = decrypt(password)
+  puts "Your decrypted word is #{dec}."
 else
   puts "Please enter e for encrypt or d for decrypt."
 end
 
+entered = decrypt(encrypt(password))
+puts "You entered #{entered}."
 
+# Module 4.6, release 4: decrypt(encrypt("swordfish"))
