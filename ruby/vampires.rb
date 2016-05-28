@@ -40,7 +40,7 @@ def vampire_questions()
 	until allergies == "done" || allergies == "sunshine"
 		allergies = gets.chomp
     if allergies == "sunshine"
-      is_a_vampire = "dy"
+      is_a_vampire = "py"
     else
     	if (year_born == computed_age) && (garlic_bread == "y" || insurance == "y")
     		is_a_vampire = "pn"
@@ -86,4 +86,7 @@ while counter < number_of_employees.to_i
 	vampire_questions
 	counter += 1
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+
 
