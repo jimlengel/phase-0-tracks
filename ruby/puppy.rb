@@ -15,11 +15,18 @@
 # Bark
 
 class Puppy
+
+	def initialize
+		puts "Initializing new puppy instance ..."
+	end
+
+	def fetch(toy)
+		puts "I brought back the #{toy}!"
+		toy
+	end
+
 end
 
-p Puppy.methods
-
-duchess = Puppy.new
-fido = Puppy.new
-spot = Puppy.new
+babs = Puppy.new
+babs.fetch('ham')
 
