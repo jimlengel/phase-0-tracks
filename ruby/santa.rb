@@ -31,16 +31,17 @@ end
 # end
 
 santas = []
-genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+genders = ["male", "female", "gender fluid", "third gender"]
+ethnicities = ["African-American", "Cuban", "White", "Indian"]
 
 genders.length.times do |a|
 	puts genders[a]
 	puts ethnicities[a]
-	# puts "This santa's gender is #{genders[i]}."
-	# puts "This santa's ethnicity is #{ethnicities[i]}."
-	# santas << Santa.new(genders[i], ethnicities[i])
-	# puts "There are now #{genders.length} Santa instances."
-	# puts " "
+	santas << Santa.new(genders[a], ethnicities[a])
+	puts "This santa's gender is #{genders[a]}."
+	puts "This santa's ethnicity is #{ethnicities[a]}."
+	puts "There are now #{a+1} Santa instances."
+  puts " "
+
 end
 
