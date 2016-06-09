@@ -67,6 +67,19 @@ genders = ["male", "female", "gender fluid", "third gender", "male", "female", "
 ethnicities = ["African-American", "Cuban", "White", "Indian", "African-American", "Cuban", "White", "Indian", "Nepalese"]
 
 
+# RELEASE 4
+santa_count = 1
+100.times do
+	r1 = rand(9)
+	r2 = rand(9)
+	santa_name = "#{santa_count}santa"
+	santa_name = Santa.new(genders[r1], ethnicities[r2])
+	puts santa_name.gender
+	puts santa_name.ethnicity
+	puts " "
+	santa_count += 1
+end
+
 # RELEASE 3
 # Refactor your code with attr_reader and attr_accessor. Verify that your driver code still works.
 
@@ -78,7 +91,6 @@ santanother = Santa.new(ethnicities[2], genders[2])
 santanother.gender = "female"
 santanother.age = 4
 santanother.ethnicity = "Hopi"
-# puts santanother.gender
 santanother.get_mad_at = "Vixen"
 puts santanother.get_mad_at
 puts santanother.age
