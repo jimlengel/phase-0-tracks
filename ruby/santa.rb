@@ -28,33 +28,36 @@ class Santa
 		@get_mad_at = @reindeer_ranking
 	end
 
-	def get_mad_at
-		@get_mad_at
-	end
+	# def get_mad_at
+	# 	@get_mad_at
+	# end
 
-	def age=(new_age)
-		@age = new_age
-	end
+	attr_reader :get_mad_at
+	attr_accessor :age, :ethnicity, :gender
 
-	def age
-		@age
-	end
+	# def age=(new_age)
+	# 	@age = new_age
+	# end
 
-	def ethnicity=(new_ethnicity)
-		@ethnicity = new_ethnicity
-	end
+	# def age
+	# 	@age
+	# end
 
-	def ethnicity
-		@ethnicity
-	end
+	# def ethnicity=(new_ethnicity)
+	# 	@ethnicity = new_ethnicity
+	# end
 
-	def gender=(new_gender)
-    @gender = new_gender
-	end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
-	def gender
-		@gender
-	end
+	# def gender=(new_gender)
+ #    @gender = new_gender
+	# end
+
+	# def gender
+	# 	@gender
+	# end
 
 	
 end
@@ -62,6 +65,10 @@ end
 
 genders = ["male", "female", "gender fluid", "third gender", "male", "female", "gender fluid", "third gender", "female"]
 ethnicities = ["African-American", "Cuban", "White", "Indian", "African-American", "Cuban", "White", "Indian", "Nepalese"]
+
+
+# RELEASE 3
+# Refactor your code with attr_reader and attr_accessor. Verify that your driver code still works.
 
 
 # RELEASE 2
