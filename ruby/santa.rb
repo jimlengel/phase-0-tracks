@@ -5,9 +5,9 @@ class Santa
 		puts "Initializing Santa instance ..."
 		@gender = gender
 		@ethnicity = ethnicity
-		@age = 0
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	end
+		@age = 0
+		end
 
 	def speak
 		puts "Ho, ho, ho! Happy holidays!"
@@ -17,31 +17,83 @@ class Santa
 		puts "That was a good #{cookie}!" 
 	end
 
-	
+	def celebrate_birthday
+		@celebrate_birthday = @age + 1
+	end
+
+	def get_mad_at=(reindeer_name)
+		r_index = @reindeer_ranking.index(reindeer_name)
+		@reindeer_ranking.delete_at(r_index)
+		@reindeer_ranking.push(reindeer_name)
+		@get_mad_at = @reindeer_ranking
+	end
+
+	def get_mad_at
+		@get_mad_at
+	end
+
+	def age=(new_age)
+		@age = new_age
+	end
+
+	def age
+		@age
+	end
+
+	def ethnicity=(new_ethnicity)
+		@ethnicity = new_ethnicity
+	end
+
+	def ethnicity
+		@ethnicity
+	end
+
+	def gender=(new_gender)
+    @gender = new_gender
+	end
+
+	def gender
+		@gender
+	end
+
 	
 end
 
+
+genders = ["male", "female", "gender fluid", "third gender", "male", "female", "gender fluid", "third gender", "female"]
+ethnicities = ["African-American", "Cuban", "White", "Indian", "African-American", "Cuban", "White", "Indian", "Nepalese"]
+
+
+# RELEASE 2
+
+santanother = Santa.new(ethnicities[2], genders[2])
+
+santanother.gender = "female"
+santanother.age = 4
+santanother.ethnicity = "Hopi"
+# puts santanother.gender
+santanother.get_mad_at = "Vixen"
+puts santanother.get_mad_at
+puts santanother.age
+puts santanother.ethnicity
+
+
+
+# RELEASE 1
 
 # santas = []
-# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-# example_genders.length.times do |i|
-#   santas << Santa.new(example_genders[i], example_ethnicities[i])
+# genders.length.times do |a|
+# 	puts genders[a]
+# 	puts ethnicities[a]
+# 	santas << Santa.new(genders[a], ethnicities[a])
+# 	puts "This santa's gender is #{genders[a]}."
+# 	puts "This santa's ethnicity is #{ethnicities[a]}."
+# 	# puts "This santa's age is #{santas.age}"
+# 	puts "There are now #{a+1} Santa instances."
+#   puts " "
 # end
 
-santas = []
-genders = ["male", "female", "gender fluid", "third gender"]
-ethnicities = ["African-American", "Cuban", "White", "Indian"]
 
-genders.length.times do |a|
-	puts genders[a]
-	puts ethnicities[a]
-	santas << Santa.new(genders[a], ethnicities[a])
-	puts "This santa's gender is #{genders[a]}."
-	puts "This santa's ethnicity is #{ethnicities[a]}."
-	puts "There are now #{a+1} Santa instances."
-  puts " "
 
-end
 
