@@ -72,10 +72,14 @@ santa_count = 1
 100.times do
 	r1 = rand(9)
 	r2 = rand(9)
+	r_age = rand(141)
 	santa_name = "#{santa_count}santa"
 	santa_name = Santa.new(genders[r1], ethnicities[r2])
+	santa_name.age = r_age
+	puts santa_name
 	puts santa_name.gender
 	puts santa_name.ethnicity
+	puts santa_name.age
 	puts " "
 	santa_count += 1
 end
