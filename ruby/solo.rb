@@ -8,28 +8,30 @@
 
 class Vehicle
   attr_reader :year, :make, :model, :color
-  attr_accessor :convenience_rating
+  # attr_accessor :convenience_rating
 
     def initialize(year, make, model)
-        @year = year
-    @make = make
-    @model = model
+      puts " "
+      @year = year
+      @make = make
+      @model = model
     end
 
-  def color=(color)
-    @color
+  def color(color)
+    puts "The color of this car is #{color}."
   end
 
-  def convenience_rating=(passengers, doors)
-    @convenience_rating = doors/passengers
-    puts "The convenience rating is #{@convenience_rating}."
+  def convenience_rating(passengers, doors)
+    # @convenience_rating = doors/passengers
+    convenience_rating = passengers.to_f/doors.to_f
+    puts "The convenience rating for this vehicle is #{convenience_rating.to_f}."
   end
 
 end
 
 tesla = Vehicle.new(2016, "Tesla", "Model S")
-tesla.color = "white"
-tesla.convenience_rating
+tesla.color(white)
+tesla.convenience_rating(5,4)
 
 puts tesla.color
 puts tesla.year
