@@ -7,8 +7,8 @@
 #     but 2 doors for 5 passengers is a lower convenience rating because they have to share doors (2/5 = 0.4)
 
 class Vehicle
-  attr_reader :year, :make, :model, :color
-  # attr_accessor :convenience_rating
+  attr_reader :year, :make, :model
+  attr_accessor :color
 
     def initialize(year, make, model)
       puts " "
@@ -17,23 +17,23 @@ class Vehicle
       @model = model
     end
 
-  def color(color)
-    puts "The color of this car is #{color}."
-  end
+  # def color(color)
+  #   puts "The color of this car is #{color}."
+  # end
 
   def convenience_rating(passengers, doors)
-    # @convenience_rating = doors/passengers
     convenience_rating = passengers.to_f/doors.to_f
-    puts "The convenience rating for this vehicle is #{convenience_rating.to_f}."
+    puts "The convenience rating for the #{@make} #{@model} is #{convenience_rating.to_f}."
   end
 
 end
 
 tesla = Vehicle.new(2016, "Tesla", "Model S")
-tesla.color(white)
-tesla.convenience_rating(5,4)
 
-puts tesla.color
+
+tesla.convenience_rating(5,4)
+tesla.color = 'white'
+puts "This auto is #{tesla.color}."
 puts tesla.year
 puts tesla.make
 puts tesla.model
