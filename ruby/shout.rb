@@ -10,5 +10,6 @@ module Shout
 
 end
 
+# Release 1
 puts Shout.yell_angrily('Crap')
 puts Shout.yelling_happily('Hooray')
