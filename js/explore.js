@@ -10,13 +10,21 @@ function reverseString(string){
 	stringLength = string.length;
 	//console.log(stringLength);
 	var new_string = ""
+	var reverse_string = ""
+
 	for (var i = stringLength; i >= 0; i--) {
     //console.log(i);
     //console.log(string.slice(i));
-    new_string + string.slice(i);
-    console.log(string.slice(i));
+    new_string = string.slice(i);
+    new_string = new_string.charAt(0) 
+    //console.log("character: " + new_string);
+    reverse_string += new_string;
+    //console.log("reversed: " + reverse_string);
 	}
-	console.log(new_string);
+	//console.log("reversed: " + reverse_string);
+	return reverse_string;
 }
 
-reverseString('happy');
+var reverseIt = reverseString('happy');
+
+console.log(reverseIt);
