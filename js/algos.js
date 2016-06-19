@@ -16,6 +16,8 @@
 // 2. if the length of the current item is greater than the length of the previous item, mark it as the longest item
 // 3. after all the items have been cycled through, the one marked as longest will be the longest.
 
+console.log("\n RELEASE 0: \n");
+
 function longestPhraseFinder(wordsPhrases) {
 
 	var longestOne = ""
@@ -37,7 +39,7 @@ var wordsPhrases = ["one word","three words","two words", "so many words!!!"]
 var longestPhrase = longestPhraseFinder(wordsPhrases);
 console.log("The longest phrase is: " + longestPhrase);
 
-console.log("- - - - - - -\n");
+console.log("\n RELEASE 1: \n");
 // RELEASE 1, find a key-value match (and return true)
 
 // in a function, 
@@ -78,6 +80,50 @@ var personOne = {age: 64, name: "Tamire", flower: "rose"};
 var personTwo = {name: "Tamir", age: 64, flower: "rose"};
 console.log(keyValueMatch(personOne, personTwo));
 
+console.log("\n RELEASE 2: \n");
 
 
+// RELEASE 2
+
+// in a function,
+// Write a function that takes an integer for length, 
+// and builds and returns an array of strings of the given length.
+
+// take an integer for length of the list of words (length of array)
+// make that number of random words of minimum length of 1 and maximum length of 10
+// the words are made up of random letters, 
+//		so generate a random letter, assign it to the next letter in the word, and keep doing so until
+//		the word has been created (the assigned length of the word has been met)
+// put the words into an array
+// do this 10 times:
+// 		return the array
+// 		print the array
+// 		find the longest word in the array (using an above function)
+// 		print the longest word
+
+function randomArray(arrayLength) {
+	//console.log(arrayLength);
+	var randomNumberForLetter = ""
+	var randomNumberForWordLength = Math.floor((Math.random()*10)+1);
+	var randomLetter = ""
+	//console.log(randomNumberForWordLength);
+	var alphabet="abcdefghijklmnopqrstuvwxyz"
+	var randomWord = []
+console.log('word length: '+randomNumberForWordLength);
+
+
+
+	for (var r = 0; r < randomNumberForWordLength; r++) {
+		randomNumberForLetter = Math.floor((Math.random()*26));
+		randomLetter = alphabet.charAt(randomNumberForLetter);
+		randomWord += randomLetter;
+
+	}
+		console.log('word ' + randomWord);
+	
+
+
+}
+
+randomArray(3)
 	
