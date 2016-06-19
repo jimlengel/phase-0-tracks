@@ -103,27 +103,37 @@ console.log("\n RELEASE 2: \n");
 
 function randomArray(arrayLength) {
 	//console.log(arrayLength);
-	var randomNumberForLetter = ""
-	var randomNumberForWordLength = Math.floor((Math.random()*10)+1);
-	var randomLetter = ""
-	//console.log(randomNumberForWordLength);
-	var alphabet="abcdefghijklmnopqrstuvwxyz"
-	var randomWord = []
-console.log('word length: '+randomNumberForWordLength);
+	var randomWordArray = [];
+	for (var a = 0; a < arrayLength; a++) {
+		var randomNumberForLetter = ""
+		var randomNumberForWordLength = Math.floor((Math.random()*10)+1);
+		var randomLetter = ""
+		//console.log(randomNumberForWordLength);
+		var alphabet="abcdefghijklmnopqrstuvwxyz"
+		var randomWord = []
+		//console.log('word length: '+randomNumberForWordLength);
+			for (var r = 0; r < randomNumberForWordLength; r++) {
+				randomNumberForLetter = Math.floor((Math.random()*26));
+				randomLetter = alphabet.charAt(randomNumberForLetter);
+				randomWord += randomLetter;
 
-
-
-	for (var r = 0; r < randomNumberForWordLength; r++) {
-		randomNumberForLetter = Math.floor((Math.random()*26));
-		randomLetter = alphabet.charAt(randomNumberForLetter);
-		randomWord += randomLetter;
-
-	}
-		console.log('word ' + randomWord);
-	
-
+			}
+		//console.log('word: ' + randomWord);
+		randomWordArray.push(randomWord);
+		}
+		//console.log('array: ' + randomWordArray);
+		return randomWordArray;
 
 }
 
-randomArray(3)
-	
+// Loop through the functions 10 times to produce random-length arrays with random-length words
+// Then call the function above to produce the longest word from each array.
+var count = 0;
+while (count < 10){
+	var randomArrayResult= randomArray(Math.floor((Math.random()*10)+1));
+	console.log('The random array is: ' + randomArrayResult);
+	console.log('The longest array is: ' + longestPhraseFinder(randomArrayResult) + '\n');
+	count ++;
+}
+
+
