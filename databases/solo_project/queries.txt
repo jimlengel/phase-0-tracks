@@ -46,6 +46,37 @@ sqlite> select * from cities
 5|San Francisco|3
 
 
+sqlite> SELECT cities.state_id, states.id
+   ...> FROM cities
+   ...> INNER JOIN states
+   ...> ON cities.state_id = states.id;
+1|1
+1|1
+2|2
+3|3
+
+
+sqlite> SELECT cities.city, cities.state_id, states.id, states.state
+   ...> FROM cities
+   ...> INNER JOIN states
+   ...> ON cities.state_id = states.id;
+Indianapolis|1|1|Indiana
+Fort Wayne|1|1|Indiana
+Chicago|2|2|Illinois
+San Francisco|3|3|California
+
+
+sqlite> select city
+   ...> from cities
+   ...> left join states
+   ...> on cities.state_id=states.id;
+Indianapolis
+Fort Wayne
+Chicago
+San Francisco
+sqlite> 
+
+
 
 
 
