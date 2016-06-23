@@ -27,28 +27,25 @@ db.execute(create_table_cmd)
 # add a test bboard
 #db.execute("INSERT INTO bboard (name, task, importance) VALUES ('Bob', 'watercolor art', 9)")
 
-
+# add a row
 def create_bboard(db, name, task, importance)
   db.execute("INSERT INTO bboard (name, task, importance) VALUES (?, ?, ?)", [name, task, importance])
 end
 
+# update a row
 def update_bboard(db, name, task, importance)
   db.execute("UPDATE bboard SET task=? WHERE name=?", [task, name])
   db.execute("UPDATE bboard SET importance=? WHERE name=?", [importance, name])
 end
 
+# delete a row
 def delete_bboard(db, name)
   db.execute("DELETE FROM bboard WHERE name=?", [name])
 end
 
-# create_bboard(db, 'Joe', 'light board training', 2)
-# create_bboard(db, 'Jim', 'sweep stage', 5)
-# update_bboard(db, 'Joe', 'pick up papers', 4)
-# delete_bboard(db, 'Jim')
 
-def display_board(db)
-	bboard = db.execute("SELECT * FROM bboard")
-		puts "BULLETIN BOARD - - - - - - - - - - "
+# call from within the method
+def display_the_board(db, name, task, importance)
 	bboard.each do |bboard|
 	  puts " "
 	  puts "Name: #{bboard['name']}"
@@ -57,10 +54,105 @@ def display_board(db)
 	end
 end
 
+# display one person
+def display_person(db, name)
+	  #db.execute("DELETE FROM bboard WHERE name=?", [name])
+	bboard = db.execute("SELECT * FROM bboard WHERE name=?", [name])
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+end
+
+# display the table
+def display_board(db)
+	puts "BULLETIN BOARD - - - - - - - - - - "
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=10")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=9")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=8")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=7")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=6")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=5")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+	
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=4")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=3")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=2")
+	bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+
+	bboard = db.execute("SELECT * FROM bboard WHERE importance=1")
+		bboard.each do |bboard|
+	  puts " "
+	  puts "Name: #{bboard['name']}"
+	  puts "Task: #{bboard['task']}"
+	  puts "Importance: #{bboard['importance']}"
+	end
+end
 
 
+# ask the user to make a selection (d, a, r, u, q)
 command = ""
-
 while command != "q"
 
 	puts " "
@@ -69,6 +161,7 @@ while command != "q"
 	puts "(a) add a task"
 	puts "(r) remove a task"
 	puts "(u) update a task"
+	puts "(n) display one person"
 	puts "(q) quit"
 	command = gets.chomp
 
@@ -98,6 +191,10 @@ while command != "q"
 			update_importance = gets.chomp
 			update_bboard(db, update_name, update_task, update_importance)
 			display_board(db)
+		when "n"
+			puts "What is the name to display?"
+			display_name = gets.chomp
+			display_person(db, display_name)
 		else
 			display_board(db)
 	end
