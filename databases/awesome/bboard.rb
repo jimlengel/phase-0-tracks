@@ -48,7 +48,7 @@ end
 
 def display_board(db)
 	bboard = db.execute("SELECT * FROM bboard")
-		puts "BULLETIN BOARD"
+		puts "BULLETIN BOARD - - - - - - - - - - "
 	bboard.each do |bboard|
 	  puts " "
 	  puts "Name: #{bboard['name']}"
@@ -57,40 +57,51 @@ def display_board(db)
 	end
 end
 
-puts "Select a command:"
-puts "(d) display the board"
-puts "(a) add a task"
-puts "(r) remove a task"
-puts "(u) update a task"
-command = gets.chomp
 
-case command
-	when "d"
-		display_board(db)
-	when "a"
-		puts "What is the name?"
-		add_name = gets.chomp
-		puts "What is the task?"
-		add_task = gets.chomp
-		puts "What is the importance? (1-10)"
-		add_importance = gets.chomp.to_i		
-		create_bboard(db, add_name, add_task, add_importance)
-		display_board(db)
-	when "r"
-		puts "What is the name to delete?"
-		delete_name = gets.chomp
-		delete_bboard(db, delete_name)
-		display_board(db)
-	when "u"
-		puts "What is the name you would like to update?"
-		update_name = gets.chomp
-		puts "What is the updated task?"
-		update_task = gets.chomp
-		puts "What is the importance of the task?"
-		update_importance = gets.chomp
-		update_bboard(db, update_name, update_task, update_importance)
-		display_board(db)
-	else
-		display_board(db)
+
+command = ""
+
+while command != "q"
+
+	puts " "
+	puts "Select a command:"
+	puts "(d) display the board"
+	puts "(a) add a task"
+	puts "(r) remove a task"
+	puts "(u) update a task"
+	puts "(q) quit"
+	command = gets.chomp
+
+	case command
+		when "d"
+			display_board(db)
+		when "a"
+			puts "What is the name?"
+			add_name = gets.chomp
+			puts "What is the task?"
+			add_task = gets.chomp
+			puts "What is the importance? (1-10)"
+			add_importance = gets.chomp.to_i		
+			create_bboard(db, add_name, add_task, add_importance)
+			display_board(db)
+		when "r"
+			puts "What is the name to delete?"
+			delete_name = gets.chomp
+			delete_bboard(db, delete_name)
+			display_board(db)
+		when "u"
+			puts "What is the name you would like to update?"
+			update_name = gets.chomp
+			puts "What is the updated task?"
+			update_task = gets.chomp
+			puts "What is the importance of the task?"
+			update_importance = gets.chomp
+			update_bboard(db, update_name, update_task, update_importance)
+			display_board(db)
+		else
+			display_board(db)
+	end
+
 end
+
 
