@@ -1,6 +1,7 @@
-# OPERATION KITTEN EXPLOSION!
+# BULLETIN BOARD MAKER
+# Allows students to check in at the beginning and the end of class
+# The bulletin board shows their name, the project, and its importance (scale of 1-10)
 
-# talk about Object Relational Mapping (ORM)
 
 # require gems
 require 'sqlite3'
@@ -32,15 +33,29 @@ def create_bboard(db, name, task, importance)
 end
 
 create_bboard(db, 'Joe', 'light board training', 2)
+create_bboard(db, 'Jim', 'sweep stage', 5)
+
+def update_bboard(db, name, task, importance)
+  db.execute("UPDATE bboard SET task=? WHERE name=?", [task, name])
+  db.execute("UPDATE bboard SET importance=? WHERE name=?", [importance, name])
+end
+
+# update_bboard(db, 'Joe', 'pick up papers', 4)
+
+def delete_bboard(db, name)
+  db.execute("DELETE FROM bboard WHERE name=?", [name])
+end
+
+delete_bboard(db, 'Jim')
+
+bboard = db.execute("SELECT * FROM bboard")
+bboard.each do |bboard|
+  puts "Name: #{bboard['name']}"
+  puts "Task: #{bboard['task']}"
+  puts "Importance: #{bboard['importance']}"
+end
 
 
-#10.times do
-#  create_bboard(db, Faker::Name.name, 0)
-#end
 
-# explore ORM by retrieving data
-# kittens = db.execute("SELECT * FROM kittens")
-# kittens.each do |kitten|
-#  puts "#{kitten['name']} is #{kitten['age']}"
-# end
+
 
