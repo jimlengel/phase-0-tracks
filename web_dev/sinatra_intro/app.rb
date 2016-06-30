@@ -5,31 +5,6 @@ require 'sqlite3'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
-# write a basic GET route
-# add a query parameter
-#GET /
-
-# get '/' do
-#   "#{params[:name]} is #{params[:age]} <b>years</b> old."
-# end
-
-# get '/' do
-#   name=params[:name]
-#   if name
-#    "Hello, #{name}."
-#   else
-#     "Hello, you."
-#   end
-# end
-
-
-# write a GET route with
-# route parameters
-
-# get '/about/:person' do
-#   person = params[:person]
-#   "#{person} is a programmer, and #{person} is learning Sinatra."
-# end
 
 # A /contact route that displays an address (you can make up the address).
 get '/contact/:address' do
@@ -81,6 +56,26 @@ get '/students/' do
 end
 
 
+# Is Sinatra the only web app library in Ruby? What are some others?
+# Sinatra
+# Rails
+# Padrino
+# Lotus
+# https://blog.codeship.com/a-survey-of-non-rails-frameworks-in-ruby-cuba-sinatra-padrino-lotus/
+
+# Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+# Mongo
+# ActiveRecord
+# Datamapper
+
+# What is meant by the term web stack?
+# The stack of software that will contain an operating system, Web server, database server, and programming language.
+# For example, the "LAMP" stack is: Linux, Apache, MySQL, PHP
+
+
+
+# # # # # # # # # # # # # # # 
+
 # get '/contact/:address' do
 #   "The address is: #{params[:address]}."
 # end
@@ -108,7 +103,36 @@ end
 # write a GET route that retrieves
 # a particular student
 
-get '/students/:id' do
-  student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
-  student.to_s
-end
+# get '/students/:id' do
+#   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
+#   student.to_s
+# end
+
+
+
+# write a basic GET route
+# add a query parameter
+#GET /
+
+# get '/' do
+#   "#{params[:name]} is #{params[:age]} <b>years</b> old."
+# end
+
+# get '/' do
+#   name=params[:name]
+#   if name
+#    "Hello, #{name}."
+#   else
+#     "Hello, you."
+#   end
+# end
+
+
+# write a GET route with
+# route parameters
+
+# get '/about/:person' do
+#   person = params[:person]
+#   "#{person} is a programmer, and #{person} is learning Sinatra."
+# end
+
