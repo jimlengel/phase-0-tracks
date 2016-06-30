@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Practice</title>
+</head>
+<body>
+  <div id="everything">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <p>Here's some text!</p>
+        <p>Here's a second set of text!</p>
+        <div class="holder">
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+            </ul>
+        </div>
+        <div class="holder">
+            <ol>
+                <li>List Item 4</li>
+                <li>List Item 5</li>
+                <li>List Item 6</li>
+            </ol>
+        </div>
+        <div id="change-me">This part needs to change!</div>
+        <div id="secret">This is a hidden message.</div>
+    </div>
+
+
+    <!-- Include the jQuery library in the file -->
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script>
+
+
+      // Targets all h1 elements and makes their font-color blue
+      $('h1').css('color', 'blue');
+      $('h2').css('color', 'green');
+      $('h3').css('color', 'white');
+
+      // Targets the body element and turns its background red
+      $('body').css('background-color', '#ffcc00');
+
+      // Targets the element with the id "everything" and increases its font-size
+      $('#everything').css('font-size', '110%');
+
+      // Targets all elements with the class "holder" and adds a black border
+      $('.holder').css('border', '1px solid black');
+
+      // Targets all li elements within ul elements and bold them
+      $('ul li').css('font-weight', 'bold');
+
+      // Targets p elements coming immediately after an h1 element and makes it green
+      $('h1 + p').css('color', 'green');
+
+      // Targets the element with the id of "secret" and changes its display property to 'none'
+      $('#secret').css('display', 'none');
+
+      // Change #secret's display property back to block
+      //$('#secret').css('display', 'block');
+
+      // Targets the element with the id of "change-me" and changes its text to a new sentence
+      $('#change-me').text("jQuery is pretty neat-o!");
+
+      // Appends new text to the end of the sentence in #change-me
+      var existingText = $('#change-me').text(); // If you don't pass any arguments, you get back the text already there.
+      $('#change-me').text(existingText + " Oh wow, a new sentence!");
+
+      // Replaces #change-me's contents with two new paragraph tags with content included
+      // First, let's build out the paragraphs in a string variable:
+      var paragraphs = '<p>The first paragraph</p><p>And yet another paragraph</p>';
+      // Then, we use the .html method to clear out whatever #change-me currently contains, and replace it with our paragraphs
+      $('#change-me').html(paragraphs);
+
+      // Appends a new paragraph to #change-me
+      $('#change-me').append("<p>One more paragraph can't hurt, right?</p>");
+
+      // Targets the all li elements and changes their text to a new sentence
+      $('li').text('This replaces all the li elements.');
+
+      // Targets the all li elements and appends new text to all of them
+      // Here's something new...we can create a text node, which is just the part of a DOM element that contains text
+      var newTextNode = document.createTextNode(' This is appended to all the li elements. ');
+      // Then, we can append this new text node as a child of all <li> elements. This effectively appends
+      // this new text onto the end of whatever was already there.
+      $('li').append(newTextNode);
+
+      // Targets the element with the id of "everything" and appends an ordered list with three list elements inside
+      var orderedList = '<ol> <li>First</li> <li>Second</li> <li>Third</li> </ol>';
+      $('#everything').append(orderedList);
+
+      
+
+    </script>
+</body>
+</html>
